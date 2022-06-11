@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Beau";
+  src: url("../fonts//BeausiteClassicWeb-Regular.woff") format("woff"),
+        url("../fonts/BeausiteClassicWeb-Regular.woff2") format("woff2"),
+}
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  font-family: "Beau";
+  background: #EBEBEB;
+}
+
+.overlay{
+  position: absolute;
+  background: #EBEBEB;
+  opacity: 0.2;
+  height: 100%;
+  width:100%;
+  z-index: 2;
+  top:0;
+  pointer-events: none;
+}
+
+.container{
+  height: 100vh;
+  width:100vw;
+}
+
+canvas{
+  width:100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.text_container{
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  top:0;
+  left: 0;
+  padding: 30px;
+  mix-blend-mode: difference;
+  color: white;
+  pointer-events: none;
+  cursor: auto;
+  h1{
+    font-size: 5vw;
+    font-weight: bold;
+    max-width: 50%;
+    line-height: 1;
+  }
+  p{
+    font-size: 30px;
+    max-width: 50%;
+    margin-top: 40px;
+    color:white;
+  }
+
+}
+
+.subtitle_container{
+  position: absolute;
+  top:0;
+  width:50vw;
+  padding: 30px;
+  left: calc(50% + 30px);
+  p{
+    font-size: 30px;
+    max-width: 50%;
+    margin-top: 40px;
+    color:black;
+  }
+}
+
+
+.contact_container{
+  background: #EBEBEB;
+}
+
+@supports ((-webkit-backdrop-filter: blur(40px)) or (backdrop-filter: blur(40px))) {
+  .contact_container{
+      -webkit-backdrop-filter: blur(40px) !important;
+      backdrop-filter: blur(40px) !important;
+      background: transparent !important;
+    }
+}
+
+
+.contact_container{
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color:black;
+  background: #EBEBEB;
+  border: 2px solid black;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 3;
+  a{
+    text-decoration: none;
+    font-size: 30px;
+    color:black;
+    font-weight: bold;
+  }
+  &:hover{
+    background: #EBEBEB !important;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+
+  .text_container{
+    width: 100%;
+    padding: 15px;
+    color: black;
+    mix-blend-mode: unset !important;
+    h1{
+      font-size: 40px;
+      max-width: 100%;
+      line-height: 1.1;
+      color: black;
+    }
+    p{
+      font-size: 20px;
+      max-width: 100%;
+      margin-top: 20px;
+      color: black;
+    }
+  }
+
+  .contact_container{
+    bottom: 15px;
+    left: 15px;
+    padding: 8px 20px;
+    a{
+      text-decoration: none;
+      font-size: 20px;
+    }
+  }
+
+}
