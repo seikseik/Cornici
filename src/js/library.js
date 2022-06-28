@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function(){
   let numCircles;
 
   if(window.innerWidth < 768){
-    altezza = 30;
-    larghezza = 17;
+    altezza = 75;
+    larghezza = 120;
     numCircles = 20;
   }else{
     altezza = 150;
@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function(){
     var canvas = document.createElement("canvas");
     var ctx = canvas.getContext("2d");
     canvas.width = canvas.height = (w || 10 + Math.random() * 20 >> 0);
-    console.log(numero, "makepattern");
     ctx.fillStyle = colours[numero];
 
     if (Math.random() * 2 < 1) {
@@ -89,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function(){
   {
 
     let numero = Math.floor(Math.random() * 4)
-    console.log(numero, "loop");
 
     var x = Math.random() * w;
     var y = Math.random() * - h;
@@ -101,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if(multiplier < 30) multiplier = 30
     if(multiplier > 200) multiplier = 200
     var r = base
-    let rectangle = Matter.Bodies.rectangle(x, y, 100, 150, {
+    let rectangle = Matter.Bodies.rectangle(x, y, larghezza, altezza, {
       render: {
         fillStyle: makePattern(numero),
         strokeStyle: colours[numero],
